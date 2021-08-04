@@ -1,3 +1,8 @@
+# TL: Additions
+data/machines_active.json
+data/machines_retired.json
+data/machines_startingpoint.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -102,7 +107,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+# .env
 .venv
 env/
 venv/
