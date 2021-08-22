@@ -71,6 +71,7 @@ def dump_htb_endpoint(token: str, endpoint: str, out_file_name: str):
                      headers=headers)
 
     data = r.json()
+    data = data["info"]
     with open(f"{config.DATA_PATH}/{out_file_name}.json", "w") as f:
         json.dump(data, f, indent=4)
 

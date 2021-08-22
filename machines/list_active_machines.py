@@ -4,21 +4,15 @@ Email: thomas@thomaslaurenson.com
 URL: https://github.com/thomaslaurenson/htp-api
 Description: List active HTB machines.
 """
-import json
 from datetime import datetime
 
 import pandas as pd
 
-import config
+import data
 
-
-# Load all the JSON files
-with open(f"{config.DATA_PATH}/machines_active.json") as f:
-    machines_active = json.load(f)
-    machines_active = machines_active["info"]
 
 # Load DF from JSON
-df = pd.DataFrame.from_dict(machines_active)
+df = pd.DataFrame.from_dict(data.MACHINES_ACTIVE)
 
 df = df.sort_values(["release"])
 

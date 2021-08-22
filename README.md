@@ -34,5 +34,5 @@ The main resouce when creating these scripts was the [Hack The Box v4 API Commun
 
 There are some potentially useful JSON files in the `data` folder.
 
-- `machines_target_list.json`: List of HTB machines on the [NetSecFocus Trophy room](https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/htmlview#) list
-- `machines_advanced_list.json`: List of **advanced** HTB machines on the [NetSecFocus Trophy room](https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/htmlview#) list
+- `machines_oscp_list.json`: List of HTB machines on the [NetSecFocus Trophy room](https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/htmlview#) list
+- `machines_oscp_advanced_list.json`: List of **advanced** HTB machines on the [NetSecFocus Trophy room](https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/htmlview#) list

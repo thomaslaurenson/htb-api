@@ -9,7 +9,8 @@ from pathlib import Path
 PROJECT_ROOT_PATH = Path(__file__).parent
 
 DATA_PATH = Path(PROJECT_ROOT_PATH / "data")
+DATA_AVATARS_PATH = Path(PROJECT_ROOT_PATH / "data" / "avatars")
 MACHINES_PATH = Path(PROJECT_ROOT_PATH / "machines")
 
-TROPHY_ROOM_PATH = Path(PROJECT_ROOT_PATH.parent /
-                        "trophy_room" / "hackthebox")
+# TROPHY_ROOM_PATH = Path(PROJECT_ROOT_PATH.parent /
+#                         "trophy_room" / "hackthebox")

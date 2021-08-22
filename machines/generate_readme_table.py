@@ -4,34 +4,27 @@ Email: thomas@thomaslaurenson.com
 URL: https://github.com/thomaslaurenson/htp-api
 Description: Generate the tables for my trophy_room project README file.
 """
-import json
 from pathlib import Path
 
 import config
+import data
 
-
-# Load all the JSON files
-with open(f"{config.DATA_PATH}/machines_target_list.json") as f:
-    machines_target = json.load(f)
-with open(f"{config.DATA_PATH}/machines_advanced_list.json") as f:
-    machines_advanced = json.load(f)
-with open(f"{config.DATA_PATH}/machines_retired.json") as f:
-    machines_retired = json.load(f)
-    machines_retired = machines_retired["info"]
-with open(f"{config.DATA_PATH}/machines_startingpoint.json") as f:
-    machines_startingpoint = json.load(f)
-    machines_startingpoint = machines_startingpoint["info"]
 
 # Make machine lookup dict
 machines_retired_lookup = dict()
-for machine in machines_retired:
+for machine in data.MACHINES_RETIRED:
     machines_retired_lookup[machine["name"].lower()] = machine
 machines_startingpoint_lookup = dict()
-for machine in machines_startingpoint:
+for machine in data.MACHINES_STARTINGPOINT:
     machines_startingpoint_lookup[machine["name"].lower()] = machine
 
 # Find all machines with a writeup
-p = Path(f"{config.TROPHY_ROOM_PATH}/machines").glob('*')
+try:
+    p = Path(f"{config.TROPHY_ROOM_PATH}/machines").glob('*')
+except AttributeError:
+    print("[*] Uncomment TROPHY_ROOM_PATH in config.py...")
+    exit(1)
+
 machines_completed = [x.stem for x in p if x.is_dir()]
 machines_completed.sort()
 
@@ -45,9 +38,9 @@ for machine_name in machines_completed:
     os = machine_data["os"]
     difficulty = machine_data["difficultyText"]
 
-    if name in machines_target:
+    if name in data.MACHINES_OSCP_NORMAL:
         trophy_list = "Yes"
-    elif name in machines_advanced:
+    elif name in data.MACHINES_OSCP_ADVANCED:
         trophy_list = "Yes (advanced)"
     else:
         trophy_list = "No"
@@ -74,9 +67,9 @@ for folder_name in machines_completed:
     os = machine_data["os"]
     difficulty = machine_data["difficultyText"]
 
-    if name in machines_target:
+    if name in data.MACHINES_OSCP_NORMAL:
         trophy_list = "Yes"
-    elif name in machines_advanced:
+    elif name in data.MACHINES_OSCP_ADVANCED:
         trophy_list = "Yes (advanced)"
     else:
         trophy_list = "No"
