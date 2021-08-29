@@ -34,7 +34,7 @@ def fetch_single_avatar(avatar_url: str) -> str:
     img_data = r.content
 
     # Open ONG image using Pillow
-    im = Image.open(img_data)
+    im = Image.open(BytesIO(img_data))
     # Resize, as HTB avatars vary in size
     im = im.resize((200, 200))
     # Reduce image quality (big saving on size)

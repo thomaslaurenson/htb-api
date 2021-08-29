@@ -14,21 +14,39 @@ The main resouce when creating these scripts was the [Hack The Box v4 API Commun
 
 ## Quickstart
 
-- Download this repo
-- `git clone https://github.com/thomaslaurenson/htb-api.git`
-- Enter the project folder
-- `cd htb-api`
+- Download this repo, and enter folder.
+
+```none
+git clone https://github.com/thomaslaurenson/htb-api.git
+cd htb-api
+```
+
+- Create Python virtual environment, activate it, and install requirements.
+
+```none
+python3 -m venv venv
+source venv/bin/activate
+pip3 install -r requirements.txt
+```
+
 - Add the project folder to your Python PATH
-- `export PYTHONPATH=$PYTHONPATH:$(pwd)`
-- Create Python virtual environment
-- `python3 -m venv venv`
-- Activate Python virtual environment
-- `source venv/bin/activate`
-- Install requirements
-- `pip3 install -r requirements.txt`
+
+```none
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+```
+
 - Add your HTB email and password to the environment variables file
-- `vim .env`
+
+```none
+vim .env
+```
+
 - Run any of the scripts!
+- Deactive virtual environment when done
+
+```none
+deactivate
+```
 
 ## Data
 
