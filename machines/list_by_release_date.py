@@ -27,8 +27,8 @@ print(f"{'id': <5}{'name':16}{'release':12}{'os':10}{'difficulty'}")
 for index, row in df.iterrows():
     # Comment line if you want all machines
     # not just NetSecFocus Trophy room machines
-    # if not row["trophy_room"]:
-    #     continue
+    if not row["trophy_room"]:
+        continue
 
     machine_id = row["id"]
     name = row["name"]
