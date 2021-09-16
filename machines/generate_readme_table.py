@@ -36,6 +36,7 @@ PUBLISHED_DATE_LOOKUP = {
     "Postman": "2021-09-04",
     "SwagShop": "2021-09-13",
     "Schooled": "2021-09-15",
+    "Valentine": "2021-09-17",
 }
 
 PUBLISHED_DATE_LOOKUP_SP = {
@@ -80,7 +81,6 @@ for machine_name in machines_completed:
     print(f"| [{name}]({url}) | {os} | {difficulty} | {trophy_list} | {release} | {published} |")
 
 machines_completed = [machine_name.lower() for machine_name in PUBLISHED_DATE_LOOKUP_SP.keys()]
-machines_completed.sort()
 
 # Starting Point: Generate a nice table for the README file
 print("| Name | System | Difficulty | Trophy List | Release Date | Published Date |")
