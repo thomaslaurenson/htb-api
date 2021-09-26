@@ -42,5 +42,7 @@ for machine in data.MACHINES_ALL:
     machine_dict["oscp_advanced"] = True if machine["name"] in data.MACHINES_OSCP_ADVANCED else False
     pickabox_data.append(machine_dict)
 
-with open(f"{config.DATA_PATH}/pickthebox_data.json", "w") as f:
+pickabox_data = sorted(pickabox_data, key = lambda i: i["release"], reverse=True)
+
+with open(f"{config.DATA_PATH}/machines_data.json", "w") as f:
     json.dump(pickabox_data, f, indent=4)

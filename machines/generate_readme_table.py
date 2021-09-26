@@ -9,6 +9,26 @@ from datetime import datetime
 import data
 
 
+HTB_BADGE_ICON = ("iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpSoVBTuIOG"
+                  "SonSyIFXHUKhShQqgVWnUwufQLmjQkKS6OgmvBwY/FqoOLs64OroIg+AHi5uak6CIl/q8ptIjx4Lgf7+497t4BQr3MNKtrAtB0"
+                  "20wl4mImuyoGXtGLQQwhgpjMLGNOkpLwHF/38PH1LsqzvM/9OfrVnMUAn0g8ywzTJt4gnt60Dc77xCFWlFXic+Jxky5I/Mh1xe"
+                  "U3zoUmCzwzZKZT88QhYrHQwUoHs6KpEU8Rh1VNp3wh47LKeYuzVq6y1j35C4M5fWWZ6zRHkcAiliBBhIIqSijDRpRWnRQLKdqP"
+                  "e/hHmn6JXAq5SmDkWEAFGuSmH/wPfndr5WOTblIwDnS/OM7HGBDYBRo1x/k+dpzGCeB/Bq70tr9SB2Y+Sa+1tfARMLANXFy3NW"
+                  "UPuNwBhp8M2ZSbkp+mkM8D72f0TVlg6BboW3N7a+3j9AFIU1fJG+DgEIgUKHvd4909nb39e6bV3w+413LD6ZqKlQAAAAZiS0dE"
+                  "ABQAHQAr1GFDXgAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UJEBMoBwoNM18AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZC"
+                  "B3aXRoIEdJTVBXgQ4XAAACAUlEQVQoz4WST0iTYRzHv8/j2/7l/gRDFuIkEkSQmL7VCgxiHix2GBEsJnTolgc7KHgpiKAugR66"
+                  "zJuHgVtiyKCgSxEtaO9qortIhzHYEERS33eu951tPr8OYzKn0vf2PHy+z/P782U4RUvabV+V8rMAYGGXp8POL2vtDG89JMvBrp"
+                  "jaF9VFWuEwFThMBV2klZjaF02Wg12tLAOAT5VHpq16eqJOW88Zc+QsrGcq7Py22vh9ZLhKpTki7YrELr7wSDeio50Lf1lCle0H"
+                  "VFAE9votbHg84sq+Pa38uCo/qNLqIseFX2Z2yc8NyroEdgcA4jVsP06ostxuSqiyXMP2BEBcYHfAoKzrqEcrv34XAAxaz8TU3v"
+                  "llLeBZ1gKemNo7b9B6BgA1mWPDMUQm5bdNBsxsMCJIH6sIZaMilA1B+piZDUb8tsmAITKpJi+1ltRvmiEAS8nyvffq4dcPAODq"
+                  "GAmGHCs6sIaFvTPW0VTIsaIL7JQEdkoN00kdGTv5qBn/USvDrXxI43DndZFLx1Vf6CxTXPWFdJFLc7jzVj6kMQD4uP/Q+vvwx5"
+                  "M6bT7lzP7dzHqmdfFzBgBs/OrrAyrNCtq/KbHuV+6Oa2/u2GMGa331XTnQbYjiyzoVx4Hztcbtn3MS8y5auffZfcfnzWOROxny"
+                  "W/4qFecaIfdOhZ0ppZ35B+U31U10XP4mAAAAAElFTkSuQmCC")
+
+HTB_OSCP_NORMAL_COMPLETED = 0
+HTB_COMPLETED = 0
+HTB_SP_COMPLETED = 0
+
 PUBLISHED_DATE_LOOKUP = {
     "Bashed": "2021-06-27",
     "Shocker": "2021-06-27",
@@ -37,6 +57,10 @@ PUBLISHED_DATE_LOOKUP = {
     "SwagShop": "2021-09-13",
     "Schooled": "2021-09-15",
     "Valentine": "2021-09-17",
+    "Irked": "2021-09-20",
+    "Blunder": "2021-09-21",
+    "Admirer": "2021-09-22",
+    "Networked": "2021-09-26",
 }
 
 PUBLISHED_DATE_LOOKUP_SP = {
@@ -73,10 +97,15 @@ for machine_name in machines_completed:
 
     if name in data.MACHINES_OSCP_NORMAL:
         trophy_list = "Yes"
+        # Count completed OSCP-like boxes for custom badge
+        HTB_OSCP_NORMAL_COMPLETED += 1
     elif name in data.MACHINES_OSCP_ADVANCED:
         trophy_list = "Yes (advanced)"
     else:
         trophy_list = "No"
+
+    # Count a finished box
+    HTB_COMPLETED += 1
 
     print(f"| [{name}]({url}) | {os} | {difficulty} | {trophy_list} | {release} | {published} |")
 
@@ -94,12 +123,26 @@ for i, machine_name in enumerate(machines_completed):
     release = datetime.strptime(machine_data["release"], "%Y-%m-%dT%H:%M:%S.%fZ")
     release = release.strftime("%Y-%m-%d")
     published = PUBLISHED_DATE_LOOKUP_SP[name]
+    trophy_list = "No"
 
-    if name in data.MACHINES_OSCP_NORMAL:
-        trophy_list = "Yes"
-    elif name in data.MACHINES_OSCP_ADVANCED:
-        trophy_list = "Yes (advanced)"
-    else:
-        trophy_list = "No"
+    HTB_SP_COMPLETED += 1
 
     print(f"| [{name}]({url}) | {os} | {difficulty} | {trophy_list} | {release} | {published} |")
+
+# Make a custom HTB badges
+base_url = "https://img.shields.io/badge/"
+
+# Make writeup count badge
+completed = HTB_COMPLETED + HTB_SP_COMPLETED
+badge_str = f"htb%20writeups-{completed}-green&style=plastic?logo=data:image/png;base64,"
+badge_url = f"{base_url}{badge_str}{HTB_BADGE_ICON}"
+badge = f"![htb writeups]({badge_url})"
+print(badge, end=" ")
+
+# Make oscp-like completed percentage badge
+oscp_normal_count = len(data.MACHINES_OSCP_NORMAL)
+coverage = round(HTB_OSCP_NORMAL_COMPLETED / oscp_normal_count * 100)
+badge_str = f"htb%20oscp%20coverage-{coverage}%25-green&style=plastic?logo=data:image/png;base64,"
+badge_url = f"{base_url}{badge_str}{HTB_BADGE_ICON}"
+badge = f"![htb oscp coverage]({badge_url})"
+print(badge)
