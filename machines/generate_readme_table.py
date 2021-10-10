@@ -61,6 +61,9 @@ PUBLISHED_DATE_LOOKUP = {
     "Blunder": "2021-09-21",
     "Admirer": "2021-09-22",
     "Networked": "2021-09-26",
+    "Doctor": "2021-09-28",
+    "FriendZone": "2021-09-30",
+    "Blue": "2021-10-04",
 }
 
 PUBLISHED_DATE_LOOKUP_SP = {
