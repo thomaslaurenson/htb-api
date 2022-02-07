@@ -40,6 +40,11 @@
     "Ready",
     "Delivery",
     "Ophiuchi",
+    "ScriptKiddie",
+    "Aramageddon",
+    "Knife",
+    "Pit",
+    "Seal",
     "Legacy",
     "Blue",
     "Devel",
@@ -63,5 +68,8 @@
     "Remote",
     "Fuse",
     "Omni",
-    "Worker"
+    "Worker",
+    "Love",
+    "Intelligence",
+    "APT"
 ]

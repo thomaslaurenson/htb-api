@@ -24,6 +24,11 @@
     "Querier",
     "Quick",
     "BlackField",
-    "APT",
-    "Atom"
+    "Atom",
+    "Breadcrumbs",
+    "Monitors",
+    "Dynstr",
+    "PivotAPI",
+    "Pikaboo",
+    "Monteverde"
 ]
