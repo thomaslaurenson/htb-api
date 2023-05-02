@@ -29,19 +29,13 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 ```
 
-- Add the project folder to your Python PATH
-
-```none
-export PYTHONPATH=$PYTHONPATH:$(pwd)
-```
-
 - Add your HTB email and password to the environment variables file
 
 ```none
 vim .env
 ```
 
-- Run any of the scripts!
+- Run any of the scripts in the `python` folder!
 - Deactive virtual environment when done
 
 ```none
