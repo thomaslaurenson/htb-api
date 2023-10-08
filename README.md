@@ -1,6 +1,6 @@
 # htb-api
 
-Some basic scripts to dump and process data from the Hack The Box API.
+Some scripts to dump and process data from the Hack The Box (HTB) API.
 
 ## Overview
 
@@ -10,15 +10,14 @@ These scripts are mainly used to:
 - Process machine data to find machines based on difficulty, release date or platform
 - Determine the correct machine naming conventions
 
-The main resouce when creating these scripts was the [Hack The Box v4 API Community Documentation by Propolisa](https://github.com/Propolisa/htb-api-docs). This independent project links to [HTB v4 API Documentation (via Postman)](https://documenter.getpostman.com/view/13129365/TVeqbmeq) - which is awesome to lookup API endpoints to get more information on the Hack The Box API.
+The main resource when creating these scripts was the [Hack The Box v4 API Community Documentation by Propolisa](https://github.com/Propolisa/htb-api-docs). This independent project links to [HTB v4 API Documentation (via Postman)](https://documenter.getpostman.com/view/13129365/TVeqbmeq) - which is awesome to lookup API endpoints to get more information on the Hack The Box API.
 
 ## Quickstart
 
 - Download this repo, and enter folder.
 
 ```none
-git clone https://github.com/thomaslaurenson/htb-api.git
-cd htb-api
+git clone https://github.com/thomaslaurenson/htb-api.git && cd htb-api
 ```
 
 - Create Python virtual environment, activate it, and install requirements.
@@ -36,7 +35,7 @@ vim .env
 ```
 
 - Run any of the scripts in the `python` folder!
-- Deactive virtual environment when done
+- Deactivate virtual environment when done
 
 ```none
 deactivate

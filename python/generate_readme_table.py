@@ -1,9 +1,3 @@
-"""
-Author: Thomas Laurenson
-Email: thomas@thomaslaurenson.com
-URL: https://github.com/thomaslaurenson/htp-api
-Description: Generate the tables for my trophy_room project README file.
-"""
 from datetime import datetime
 
 import data

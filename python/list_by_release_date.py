@@ -1,9 +1,3 @@
-"""
-Author: Thomas Laurenson
-Email: thomas@thomaslaurenson.com
-URL: https://github.com/thomaslaurenson/htp-api
-Description: List HTB machines by release date.
-"""
 from datetime import datetime
 
 import numpy as np

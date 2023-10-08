@@ -1,9 +1,3 @@
-"""
-Author: Thomas Laurenson
-Email: thomas@thomaslaurenson.com
-URL: https://github.com/thomaslaurenson/htp-api
-Description: Project data.
-"""
 import json
 from pathlib import Path
 
