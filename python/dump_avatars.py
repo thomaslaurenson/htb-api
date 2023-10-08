@@ -1,9 +1,3 @@
-"""
-Author: Thomas Laurenson
-Email: thomas@thomaslaurenson.com
-URL: https://github.com/thomaslaurenson/htp-api
-Description: Dump machine avatars from the HTB API and save to the data/ folder in base64 JSON.
-"""
 import json
 import base64
 from io import BytesIO
@@ -30,6 +24,9 @@ def fetch_single_avatar(avatar_url: str) -> str:
     }
     r = requests.get(avatar_url,
                      headers=headers)
+
+    if r.status_code != 200:
+        return None
 
     img_data = r.content
 
@@ -59,24 +56,34 @@ def dump_htb_avatars():
     all_machines = data.MACHINES_ALL
     all_machines = sorted(all_machines, key=lambda i: i["id"])
 
-    machines_avatars = data.MACHINES_AVATARS
-
     for machine in all_machines:
         machine_id = str(machine["id"])
 
+        # Load avatar file for each loop iteration
+        # This allows updating inline
+        machines_avatars = data.MACHINES_AVATARS
+
         if machine_id in machines_avatars:
             print(f"[*] Skipping machine ID: {machine_id}")
+            continue
+        if machine_id == "295":
+            # returning 404
             continue
 
         print(f"[*] Processing machine ID: {machine_id}")
         avatar_path = machine["avatar"]
         avatar_url = f"{BASE_URL}{avatar_path}"
         img_b64_str = fetch_single_avatar(avatar_url)
+
+        # Skip if not returning 200 and image not downloaded
+        if not img_b64_str:
+            continue
+
         machines_avatars[machine_id] = img_b64_str
 
-    # Dump image data to JSON file
-    with open(f"{config.DATA_PATH}/machines_avatars.json", "w") as f:
-        json.dump(machines_avatars, f, indent=4)
+        # Dump image data to JSON file
+        with open(f"{config.DATA_PATH}/machines_avatars.json", "w") as f:
+            json.dump(machines_avatars, f, indent=4)
 
 
 if __name__ == '__main__':

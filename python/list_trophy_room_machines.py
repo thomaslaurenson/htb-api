@@ -1,9 +1,3 @@
-"""
-Author: Thomas Laurenson
-Email: thomas@thomaslaurenson.com
-URL: https://github.com/thomaslaurenson/htp-api
-Description: List HTB machines on the NetSecFocus Trophy Room list.
-"""
 from datetime import datetime
 
 import numpy as np

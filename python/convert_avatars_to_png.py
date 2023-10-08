@@ -1,9 +1,3 @@
-"""
-Author: Thomas Laurenson
-Email: thomas@thomaslaurenson.com
-URL: https://github.com/thomaslaurenson/htp-api
-Description: Convert previously dumped HTB machine avatars to PNGs.
-"""
 import base64
 from io import BytesIO
 from pathlib import Path

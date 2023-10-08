@@ -1,9 +1,5 @@
 # TL: Additions
-data/machines_active.json
-data/machines_retired.json
-data/machines_startingpoint.json
 data/machines_data.json
-data/machines_avatars.json
 data/avatars
 
 # Byte-compiled / optimized / DLL files

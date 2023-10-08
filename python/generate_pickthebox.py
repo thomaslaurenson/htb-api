@@ -1,9 +1,3 @@
-"""
-Author: Thomas Laurenson
-Email: thomas@thomaslaurenson.com
-URL: https://github.com/thomaslaurenson/htp-api
-Description: Generate the JSON files for pickabox web app.
-"""
 import json
 from datetime import datetime
 

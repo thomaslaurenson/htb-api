@@ -1,9 +1,3 @@
-"""
-Author: Thomas Laurenson
-Email: thomas@thomaslaurenson.com
-URL: https://github.com/thomaslaurenson/htp-api
-Description: Dump data from the HTB API and save to the data/ folder for offline processing.
-"""
 import os
 import json
 
@@ -46,8 +40,6 @@ def get_htb_login_token() -> str:
     data = r.json()
     token = data["message"]["access_token"]
 
-    print(f"[*] Token: {token}")
-
     return token
 
 
@@ -78,6 +70,8 @@ def dump_htb_endpoint(token: str, endpoint: str, out_file_name: str):
 
 if __name__ == '__main__':
     token = get_htb_login_token()
+
+    print(config.DATA_PATH)
 
     # Dump active machines
     dump_htb_endpoint(token=token,
