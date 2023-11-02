@@ -3,25 +3,29 @@ from datetime import datetime
 import data
 
 
-HTB_BADGE_ICON = ("iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpSoVBTuIOG"
-                  "SonSyIFXHUKhShQqgVWnUwufQLmjQkKS6OgmvBwY/FqoOLs64OroIg+AHi5uak6CIl/q8ptIjx4Lgf7+497t4BQr3MNKtrAtB0"
-                  "20wl4mImuyoGXtGLQQwhgpjMLGNOkpLwHF/38PH1LsqzvM/9OfrVnMUAn0g8ywzTJt4gnt60Dc77xCFWlFXic+Jxky5I/Mh1xe"
-                  "U3zoUmCzwzZKZT88QhYrHQwUoHs6KpEU8Rh1VNp3wh47LKeYuzVq6y1j35C4M5fWWZ6zRHkcAiliBBhIIqSijDRpRWnRQLKdqP"
-                  "e/hHmn6JXAq5SmDkWEAFGuSmH/wPfndr5WOTblIwDnS/OM7HGBDYBRo1x/k+dpzGCeB/Bq70tr9SB2Y+Sa+1tfARMLANXFy3NW"
-                  "UPuNwBhp8M2ZSbkp+mkM8D72f0TVlg6BboW3N7a+3j9AFIU1fJG+DgEIgUKHvd4909nb39e6bV3w+413LD6ZqKlQAAAAZiS0dE"
-                  "ABQAHQAr1GFDXgAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UJEBMoBwoNM18AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZC"
-                  "B3aXRoIEdJTVBXgQ4XAAACAUlEQVQoz4WST0iTYRzHv8/j2/7l/gRDFuIkEkSQmL7VCgxiHix2GBEsJnTolgc7KHgpiKAugR66"
-                  "zJuHgVtiyKCgSxEtaO9qortIhzHYEERS33eu951tPr8OYzKn0vf2PHy+z/P782U4RUvabV+V8rMAYGGXp8POL2vtDG89JMvBrp"
-                  "jaF9VFWuEwFThMBV2klZjaF02Wg12tLAOAT5VHpq16eqJOW88Zc+QsrGcq7Py22vh9ZLhKpTki7YrELr7wSDeio50Lf1lCle0H"
-                  "VFAE9votbHg84sq+Pa38uCo/qNLqIseFX2Z2yc8NyroEdgcA4jVsP06ostxuSqiyXMP2BEBcYHfAoKzrqEcrv34XAAxaz8TU3v"
-                  "llLeBZ1gKemNo7b9B6BgA1mWPDMUQm5bdNBsxsMCJIH6sIZaMilA1B+piZDUb8tsmAITKpJi+1ltRvmiEAS8nyvffq4dcPAODq"
-                  "GAmGHCs6sIaFvTPW0VTIsaIL7JQEdkoN00kdGTv5qBn/USvDrXxI43DndZFLx1Vf6CxTXPWFdJFLc7jzVj6kMQD4uP/Q+vvwx5"
-                  "M6bT7lzP7dzHqmdfFzBgBs/OrrAyrNCtq/KbHuV+6Oa2/u2GMGa331XTnQbYjiyzoVx4Hztcbtn3MS8y5auffZfcfnzWOROxny"
-                  "W/4qFecaIfdOhZ0ppZ35B+U31U10XP4mAAAAAElFTkSuQmCC")
+HTB_BADGE_ICON = (
+    "iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAf"
+    "SC3RAAAABmJLR0QA/wD/AP+gvaeTAAABzklEQVQo"
+    "z41SPWgTYRh+vu8uLTbkeqiolyFkaRoKEUpKKYWC"
+    "ONRmiMUihda0i6ODoFApzg4KCg5udWkMXEUUdGiz"
+    "SLp1qKUYh6NZSksJgrH3XZo76CXf6yDVpGnQZ3p5"
+    "3+f9f4AOMEVy2BTJ4U5xdtrx3kkZNWk9k/TjJgBw"
+    "dvFjkMcXprTVcjOPnxhrR3PdOXtg0WlsWAD3NWW0"
+    "X1NG+wHuO40NK2cPLK4dzXW3dMzZfdfr9PM1EPh+"
+    "jsfvTfcWvjRXfyuuJT1pvQL8yyo7f/eOXvrMAeCY"
+    "ShmJShQgAXjV9o28KkBCohI9plIGANS/MxtLjKmX"
+    "XLn1LWtHXgbZ1ScAUKOvj125dZ+zK6ucjCWJstKy"
+    "o0R5e17fn+xi8bQkL+XIdcuR65YkL9XF4ul5fX9S"
+    "orzddpwTzOrFvKFODALKJqBsGurE4KxezJ/m8bN+"
+    "NB7K+gT7gGAfjIey/lmcP4kKwlH8A80cDgABFlsh"
+    "uDPLh+GCKYYS7SoaSiwfhgsEdybAYistyvlUvdUj"
+    "GsVHdao8UJj2RpIb+a2cnr0GORmVXXjRqySepkMf"
+    "3A6SuxGpyZ3nddq9DQAqi74L8tjDKS2/h/+BKUbG"
+    "TDEy1in+CwRytDFQHtyiAAAAAElFTkSuQmCC"
+)
 
 HTB_OSCP_NORMAL_COMPLETED = 0
 HTB_COMPLETED = 0
-HTB_SP_COMPLETED = 0
 
 PUBLISHED_DATE_LOOKUP = {
     "Bashed": "2021-06-27",
@@ -58,13 +62,7 @@ PUBLISHED_DATE_LOOKUP = {
     "Doctor": "2021-09-28",
     "FriendZone": "2021-09-30",
     "Blue": "2021-10-04",
-}
-
-PUBLISHED_DATE_LOOKUP_SP = {
-    "Archetype": "2021-07-08",
-    "Oopsie": "2021-07-10",
-    "Vaccine": "2021-07-11",
-    "Shield": "2021-07-29",
+    "Paper": "2023-10-30",
 }
 
 
@@ -72,9 +70,6 @@ PUBLISHED_DATE_LOOKUP_SP = {
 machines_retired_lookup = dict()
 for machine in data.MACHINES_RETIRED:
     machines_retired_lookup[machine["name"].lower()] = machine
-machines_startingpoint_lookup = dict()
-for machine in data.MACHINES_STARTINGPOINT:
-    machines_startingpoint_lookup[machine["name"].lower()] = machine
 
 machines_completed = [machine_name.lower() for machine_name in PUBLISHED_DATE_LOOKUP.keys()]
 machines_completed.sort()
@@ -85,7 +80,7 @@ print("| ---- |--------|------------|-------------|--------------|--------------
 for machine_name in machines_completed:
     machine_data = machines_retired_lookup[machine_name]
     name = machine_data["name"]
-    url = f"hackthebox/machines/{machine_name}"
+    url = f"hackthebox/{machine_name}"
     os = machine_data["os"]
     difficulty = machine_data["difficultyText"]
     release = datetime.strptime(machine_data["release"], "%Y-%m-%dT%H:%M:%S.%fZ")
@@ -106,32 +101,12 @@ for machine_name in machines_completed:
 
     print(f"| [{name}]({url}) | {os} | {difficulty} | {trophy_list} | {release} | {published} |")
 
-machines_completed = [machine_name.lower() for machine_name in PUBLISHED_DATE_LOOKUP_SP.keys()]
-
-# Starting Point: Generate a nice table for the README file
-print("| Name | System | Difficulty | Trophy List | Release Date | Published Date |")
-print("| ---- |--------|------------|-------------|--------------|----------------|")
-for i, machine_name in enumerate(machines_completed):
-    machine_data = machines_startingpoint_lookup[machine_name]
-    name = machine_data["name"]
-    url = f"hackthebox/startingpoint/{i + 1}_{machine_name}"
-    os = machine_data["os"]
-    difficulty = machine_data["difficultyText"]
-    release = datetime.strptime(machine_data["release"], "%Y-%m-%dT%H:%M:%S.%fZ")
-    release = release.strftime("%Y-%m-%d")
-    published = PUBLISHED_DATE_LOOKUP_SP[name]
-    trophy_list = "No"
-
-    HTB_SP_COMPLETED += 1
-
-    print(f"| [{name}]({url}) | {os} | {difficulty} | {trophy_list} | {release} | {published} |")
-
 # Make a custom HTB badges
 base_url = "https://img.shields.io/badge/"
 
 # Make writeup count badge
-completed = HTB_COMPLETED + HTB_SP_COMPLETED
-badge_str = f"htb%20writeups-{completed}-green&style=plastic?logo=data:image/png;base64,"
+completed = HTB_COMPLETED
+badge_str = f"htb_writeups-{completed}-green?logo=data:image/png;base64,"
 badge_url = f"{base_url}{badge_str}{HTB_BADGE_ICON}"
 badge = f"![htb writeups]({badge_url})"
 print(badge, end=" ")
@@ -139,7 +114,7 @@ print(badge, end=" ")
 # Make oscp-like completed percentage badge
 oscp_normal_count = len(data.MACHINES_OSCP_NORMAL)
 coverage = round(HTB_OSCP_NORMAL_COMPLETED / oscp_normal_count * 100)
-badge_str = f"htb%20oscp%20coverage-{coverage}%25-green&style=plastic?logo=data:image/png;base64,"
+badge_str = f"htb_oscp_coverage-{coverage}%25-green?logo=data:image/png;base64,"
 badge_url = f"{base_url}{badge_str}{HTB_BADGE_ICON}"
 badge = f"![htb oscp coverage]({badge_url})"
 print(badge)
