@@ -2,15 +2,19 @@
 
 Some scripts to dump and process data from the Hack The Box (HTB) API.
 
+This project is by no way associated with Hack The Box.
+
 ## Overview
 
-These scripts are mainly used to:
-
-- Identify retired and active machines in the HTB labs
-- Process machine data to find machines based on difficulty, release date or platform
-- Determine the correct machine naming conventions
+This project provides a very basic library to authenticate with HTB and dump machine & machine avatar data - this is found in the `src` folder. Examples of usage is available in the `examples` folder. There is also data dumped in the `data` folder, in JSON format.
 
 The main resource when creating these scripts was the [Hack The Box v4 API Community Documentation by Propolisa](https://github.com/Propolisa/htb-api-docs). This independent project links to [HTB v4 API Documentation (via Postman)](https://documenter.getpostman.com/view/13129365/TVeqbmeq) - which is awesome to lookup API endpoints to get more information on the Hack The Box API.
+
+## Project Status
+
+This project is "hacked" together, mainly to fetch some data about machines from Hack The Box. There are no tests and no library deployed to PyPi. I do not envision adding much more to the project, as I do not need any other data (yet!). Feel free to submit a PR, fork and modify, or just grab the `htb.py` file and extend.
+
+If you require a more robust library, I recommend the [`PyHackTheBox` package](https://github.com/clubby789/htb-api) - however, it does not seem to be updated to recent HTB API changes.
 
 ## Quickstart
 
@@ -34,7 +38,7 @@ pip3 install -r requirements.txt
 vim .env
 ```
 
-- Run any of the scripts in the `python` folder!
+- Run any of the scripts in the `examples` folder!
 - Deactivate virtual environment when done
 
 ```none
