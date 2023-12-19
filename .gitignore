@@ -1,7 +1,3 @@
-# TL: Additions
-data/machines_data.json
-data/avatars
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

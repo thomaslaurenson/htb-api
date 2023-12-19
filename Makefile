@@ -1,41 +1,45 @@
-# Update data/machines_*.json files
-# This includes active, retired, startingpoint
-run_dump_machines:
+# create venv
+create_venv:
 	python3 -m venv ./venv; \
 	. ./venv/bin/activate && \
-	pip3 install -r requirements.txt && \
-	python3 python/dump_machines.py
+	pip3 install -r requirements.txt
 
-# Update data/machines_avatars.json files
-run_dump_avatars:
-	python3 -m venv ./venv; \
+get_token:
+	export PYTHONPATH="${PYTHONPATH}:./src" && \
 	. ./venv/bin/activate && \
-	pip3 install -r requirements.txt && \
-	python3 python/dump_avatars.py
+	python3 examples/get_token.py
 
-run_convert_avatars:
-	python3 -m venv ./venv; \
+dump_active_machines:
+	export PYTHONPATH="${PYTHONPATH}:./src" && \
 	. ./venv/bin/activate && \
-	pip3 install -r requirements.txt && \
-	python3 python/convert_avatars_to_png.py
+	python3 examples/dump_active_machines.py
 
-# Generate data for pickthebox web app
-run_generate_pickthebox:
-	python3 -m venv ./venv; \
+dump_retired_machines:
+	export PYTHONPATH="${PYTHONPATH}:./src" && \
 	. ./venv/bin/activate && \
-	pip3 install -r requirements.txt && \
-	python3 python/generate_pickthebox.py
+	python3 examples/dump_retired_machines.py
 
-# Generate readme table for trophy room repo
-run_generate_readme_table:
-	python3 -m venv ./venv; \
+dump_avatars:
+	export PYTHONPATH="${PYTHONPATH}:./src" && \
 	. ./venv/bin/activate && \
-	pip3 install -r requirements.txt && \
-	python3 python/generate_readme_table.py
+	python3 examples/dump_avatars.py
 
-# Generate flake8
-run_flake8:
-	python3 -m venv ./venv; \
+list_active_machines:
 	. ./venv/bin/activate && \
-	pip3 install -r requirements.txt && \
+	python3 examples/list_active_machines.py
+
+list_by_release_date:
+	. ./venv/bin/activate && \
+	python3 examples/list_by_release_date.py
+
+list_trophyroom_machines:
+	. ./venv/bin/activate && \
+	python3 examples/list_trophyroom_machines.py
+
+generate_pickthebox:
+	. ./venv/bin/activate && \
+	python3 examples/generate_pickthebox.py
+
+flake8:
+	. ./venv/bin/activate && \
 	python3 -m flake8
