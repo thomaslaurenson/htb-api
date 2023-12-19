@@ -14,7 +14,7 @@ class HTB:
         }
         self.token: None
 
-    def get_token(self, username: str, password: str) -> str:
+    def get_token(self, email: str, password: str) -> str:
         """Get HTB token using normal user account.
 
         :return token: Returns a token string.
@@ -25,7 +25,7 @@ class HTB:
         headers["Content-Type"] = "application/json;charset=utf-8"
 
         data = {
-            "email": username,
+            "email": email,
             "password": password,
             "remember": True
         }

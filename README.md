@@ -6,7 +6,7 @@ This project is by no way associated with Hack The Box.
 
 ## Overview
 
-This project provides a very basic library to authenticate with HTB and dump machine & machine avatar data - this is found in the `src` folder. Examples of usage is available in the `examples` folder. There is also data dumped in the `data` folder, in JSON format.
+This project provides a very basic library to authenticate with HTB and dump machine & machine avatar data - this is found in the `src` folder. Examples of usage is available in the `examples` folder. There is also some data dumped in the `data` folder to ease processing, stored in JSON format.
 
 The main resource when creating these scripts was the [Hack The Box v4 API Community Documentation by Propolisa](https://github.com/Propolisa/htb-api-docs). This independent project links to [HTB v4 API Documentation (via Postman)](https://documenter.getpostman.com/view/13129365/TVeqbmeq) - which is awesome to lookup API endpoints to get more information on the Hack The Box API.
 
@@ -14,7 +14,7 @@ The main resource when creating these scripts was the [Hack The Box v4 API Commu
 
 This project is "hacked" together, mainly to fetch some data about machines from Hack The Box. There are no tests and no library deployed to PyPi. I do not envision adding much more to the project, as I do not need any other data (yet!). Feel free to submit a PR, fork and modify, or just grab the `htb.py` file and extend.
 
-If you require a more robust library, I recommend the [`PyHackTheBox` package](https://github.com/clubby789/htb-api) - however, it does not seem to be updated to recent HTB API changes.
+If you require a more robust library, I recommend the [`PyHackTheBox` package](https://github.com/clubby789/htb-api) - however, it does not seem to be updated to recent HTB API changes, according to my testing and [this open issue](https://github.com/clubby789/htb-api/issues/62).
 
 ## Quickstart
 
@@ -44,10 +44,3 @@ vim .env
 ```none
 deactivate
 ```
-
-## Data
-
-There are some potentially useful JSON files in the `data` folder.
-
-- `machines_oscp_list.json`: List of HTB machines on the [NetSecFocus Trophy room](https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/htmlview#) list
-- `machines_oscp_advanced_list.json`: List of **advanced** HTB machines on the [NetSecFocus Trophy room](https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/htmlview#) list
