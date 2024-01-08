@@ -38,10 +38,10 @@ pip3 install -r requirements.txt
 vim .env
 ```
 
-Add the `htb` directory to `PYTHONPATH` environment variable:
+Add the `src` directory with the `htb.py` package to `PYTHONPATH` environment variable:
 
 ```
-export PYTHONPATH="$PYTHONPATH:$(pwd)/htb"
+export PYTHONPATH="$PYTHONPATH:$(pwd)/src"
 ```
 
 - Run any of the scripts in the `examples` folder!
