@@ -5,22 +5,22 @@ create_venv:
 	pip3 install -r requirements.txt
 
 get_token:
-	export PYTHONPATH="${PYTHONPATH}:./src" && \
+	export PYTHONPATH="${PYTHONPATH}:$(pwd)/src" && \
 	. ./venv/bin/activate && \
 	python3 examples/get_token.py
 
 dump_active_machines:
-	export PYTHONPATH="${PYTHONPATH}:./src" && \
+	export PYTHONPATH="${PYTHONPATH}:$(pwd)/src" && \
 	. ./venv/bin/activate && \
 	python3 examples/dump_active_machines.py
 
 dump_retired_machines:
-	export PYTHONPATH="${PYTHONPATH}:./src" && \
+	export PYTHONPATH="${PYTHONPATH}:$(pwd)/src" && \
 	. ./venv/bin/activate && \
 	python3 examples/dump_retired_machines.py
 
 dump_avatars:
-	export PYTHONPATH="${PYTHONPATH}:./src" && \
+	export PYTHONPATH="${PYTHONPATH}:$(pwd)/src" && \
 	. ./venv/bin/activate && \
 	python3 examples/dump_avatars.py
 
